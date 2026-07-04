@@ -1,0 +1,120 @@
+@import "tailwindcss";
+
+@theme {
+  /* ---- LUNA color palette ---- */
+  --color-luna-100: #a7ebf2; /* light cyan   */
+  --color-luna-300: #54acbf; /* medium teal  */
+  --color-luna-500: #26658c; /* blue         */
+  --color-luna-700: #023859; /* dark blue    */
+  --color-luna-900: #011c40; /* deep navy    */
+
+  --color-ink: #011c40;
+  --color-cloud: #eef7fb;
+
+  --font-sans: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-fraunces), Georgia, serif;
+
+  --shadow-glow: 0 0 40px -10px rgba(167, 235, 242, 0.45);
+  --shadow-soft: 0 20px 60px -25px rgba(1, 28, 64, 0.55);
+
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-pulse-slow: pulseSlow 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-14px);
+  }
+}
+
+@keyframes pulseSlow {
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-luna-900);
+  color: var(--color-cloud);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* Selection */
+::selection {
+  background: var(--color-luna-300);
+  color: var(--color-luna-900);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #01142e;
+}
+::-webkit-scrollbar-thumb {
+  background: #123a5c;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #1c527e;
+}
+
+/* ---- Utility: glass card ---- */
+.glass {
+  background: linear-gradient(
+    180deg,
+    rgba(84, 172, 191, 0.1),
+    rgba(2, 56, 89, 0.16)
+  );
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(167, 235, 242, 0.14);
+}
+
+/* ---- Gradient text ---- */
+.text-gradient {
+  background: linear-gradient(120deg, #a7ebf2 0%, #54acbf 55%, #26658c 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ---- Scroll reveal ---- */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Grid background */
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(84, 172, 191, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(84, 172, 191, 0.06) 1px, transparent 1px);
+  background-size: 46px 46px;
+}
