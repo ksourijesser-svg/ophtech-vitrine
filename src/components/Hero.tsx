@@ -5,7 +5,7 @@ export default function Hero() {
   return (
     <section
       id="top"
-      className="relative overflow-hidden pt-28 pb-16 sm:pt-32 lg:pt-36"
+      className="relative overflow-hidden pt-28 pb-0 sm:pt-32 lg:pt-36"
     >
       {/* Background layers */}
       <div className="grid-bg pointer-events-none absolute inset-0 opacity-70" />
