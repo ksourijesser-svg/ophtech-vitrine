@@ -15,7 +15,7 @@ export default function Hero() {
 
       <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-5 sm:px-8 lg:grid-cols-[1.05fr_1fr] lg:gap-6">
         {/* Portrait — she points toward the headline on the right */}
-        <div className="relative order-2 lg:order-1">
+        <div className="relative order-2 lg:order-1 lg:self-end">
           <div className="relative mx-auto max-w-md lg:max-w-none">
             {/* Glow ring behind portrait */}
             <div className="absolute inset-x-6 bottom-4 top-10 rounded-[2.5rem] bg-gradient-to-tr from-luna-300/40 via-luna-100/25 to-transparent blur-2xl" />
@@ -83,21 +83,6 @@ export default function Hero() {
               <PlayCircle className="h-4 w-4" />
               Voir la démo
             </a>
-          </div>
-
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-foreground/55 lg:justify-start">
-            <span className="flex items-center gap-2">
-              <span className="h-1.5 w-1.5 rounded-full bg-accent" />
-              Sans engagement
-            </span>
-            <span className="flex items-center gap-2">
-              <span className="h-1.5 w-1.5 rounded-full bg-accent" />
-              Données chiffrées &amp; isolées
-            </span>
-            <span className="flex items-center gap-2">
-              <span className="h-1.5 w-1.5 rounded-full bg-accent" />
-              Support en français
-            </span>
           </div>
         </div>
       </div>
