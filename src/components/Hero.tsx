@@ -35,7 +35,7 @@ export default function Hero() {
               <p className="text-2xl font-semibold text-accent">+30%</p>
               <p className="text-xs text-foreground/70">de temps gagné</p>
             </div>
-            <div className="glass absolute bottom-8 right-0 z-20 hidden rounded-2xl px-4 py-3 shadow-soft sm:block">
+            <div className="glass absolute left-[40%] top-0 z-20 hidden rounded-2xl px-4 py-3 shadow-soft sm:block">
               <div className="flex items-center gap-2">
                 <span className="flex h-2.5 w-2.5">
                   <span className="absolute h-2.5 w-2.5 animate-ping rounded-full bg-luna-300/70" />
