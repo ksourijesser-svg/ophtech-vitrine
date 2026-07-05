@@ -1,24 +1,96 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
-  /* ---- LUNA color palette ---- */
+  /* ---- LUNA color palette (fixed) ---- */
   --color-luna-100: #a7ebf2; /* light cyan   */
   --color-luna-300: #54acbf; /* medium teal  */
   --color-luna-500: #26658c; /* blue         */
   --color-luna-700: #023859; /* dark blue    */
   --color-luna-900: #011c40; /* deep navy    */
 
-  --color-ink: #011c40;
-  --color-cloud: #eef7fb;
-
   --font-sans: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
   --font-display: var(--font-fraunces), Georgia, serif;
 
-  --shadow-glow: 0 0 40px -10px rgba(167, 235, 242, 0.45);
-  --shadow-soft: 0 20px 60px -25px rgba(1, 28, 64, 0.55);
-
   --animate-float: float 6s ease-in-out infinite;
   --animate-pulse-slow: pulseSlow 4s ease-in-out infinite;
+}
+
+/* ---- Semantic tokens exposed as Tailwind utilities (theme-aware) ---- */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-accent: var(--accent);
+  --color-border: var(--border-c);
+  --shadow-glow: var(--glow);
+  --shadow-soft: var(--soft);
+}
+
+/* ============ LIGHT THEME (default) ============ */
+:root {
+  --background: #e9f3f8;
+  --foreground: #082033;
+  --accent: #1f6f96;
+  --border-c: rgba(8, 32, 51, 0.12);
+
+  --glass-grad: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.88),
+    rgba(255, 255, 255, 0.62)
+  );
+  --glass-border: rgba(31, 111, 150, 0.16);
+  --panel-bg: rgba(255, 255, 255, 0.72);
+  --section-alt-bg: rgba(84, 172, 191, 0.1);
+  --section-alt-border: rgba(31, 111, 150, 0.14);
+  --grid-line: rgba(38, 101, 140, 0.1);
+
+  --grad-text: linear-gradient(120deg, #26658c 0%, #1f6f96 50%, #54acbf 100%);
+
+  --btn-from: #26658c;
+  --btn-to: #54acbf;
+  --btn-text: #ffffff;
+  --btn-outline-border: rgba(31, 111, 150, 0.28);
+  --btn-outline-bg: rgba(255, 255, 255, 0.55);
+  --btn-outline-text: #0d3550;
+
+  --glow: 0 18px 40px -18px rgba(38, 101, 140, 0.4);
+  --soft: 0 24px 60px -28px rgba(8, 32, 51, 0.26);
+
+  color-scheme: light;
+}
+
+/* ============ DARK THEME ============ */
+.dark {
+  --background: #011c40;
+  --foreground: #eef7fb;
+  --accent: #a7ebf2;
+  --border-c: rgba(167, 235, 242, 0.14);
+
+  --glass-grad: linear-gradient(
+    180deg,
+    rgba(84, 172, 191, 0.1),
+    rgba(2, 56, 89, 0.16)
+  );
+  --glass-border: rgba(167, 235, 242, 0.14);
+  --panel-bg: rgba(1, 28, 64, 0.45);
+  --section-alt-bg: rgba(2, 56, 89, 0.28);
+  --section-alt-border: rgba(84, 172, 191, 0.12);
+  --grid-line: rgba(84, 172, 191, 0.07);
+
+  --grad-text: linear-gradient(120deg, #a7ebf2 0%, #54acbf 55%, #26658c 100%);
+
+  --btn-from: #a7ebf2;
+  --btn-to: #54acbf;
+  --btn-text: #011c40;
+  --btn-outline-border: rgba(167, 235, 242, 0.3);
+  --btn-outline-bg: rgba(38, 101, 140, 0.06);
+  --btn-outline-text: #eef7fb;
+
+  --glow: 0 0 40px -10px rgba(167, 235, 242, 0.45);
+  --soft: 0 20px 60px -25px rgba(1, 28, 64, 0.55);
+
+  color-scheme: dark;
 }
 
 @keyframes float {
@@ -41,26 +113,24 @@
   }
 }
 
-:root {
-  color-scheme: dark;
-}
-
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  background-color: var(--color-luna-900);
-  color: var(--color-cloud);
+  background-color: var(--background);
+  color: var(--foreground);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
+  transition:
+    background-color 0.4s ease,
+    color 0.4s ease;
 }
 
-/* Selection */
 ::selection {
   background: var(--color-luna-300);
-  color: var(--color-luna-900);
+  color: #011c40;
 }
 
 /* Scrollbar */
@@ -68,30 +138,64 @@ body {
   width: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: #01142e;
+  background: var(--section-alt-bg);
 }
 ::-webkit-scrollbar-thumb {
-  background: #123a5c;
+  background: var(--color-luna-300);
   border-radius: 9999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #1c527e;
+  background: var(--color-luna-500);
 }
 
-/* ---- Utility: glass card ---- */
+/* ---- Glass card ---- */
 .glass {
-  background: linear-gradient(
-    180deg,
-    rgba(84, 172, 191, 0.1),
-    rgba(2, 56, 89, 0.16)
-  );
+  background: var(--glass-grad);
   backdrop-filter: blur(18px);
-  border: 1px solid rgba(167, 235, 242, 0.14);
+  border: 1px solid var(--glass-border);
+  transition:
+    background 0.4s ease,
+    border-color 0.4s ease;
+}
+
+/* ---- Solid-ish inner panel ---- */
+.panel {
+  background: var(--panel-bg);
+  border: 1px solid var(--border-c);
+  transition:
+    background 0.4s ease,
+    border-color 0.4s ease;
+}
+
+/* ---- Alternating section band ---- */
+.section-alt {
+  background: var(--section-alt-bg);
+  border-top: 1px solid var(--section-alt-border);
+  border-bottom: 1px solid var(--section-alt-border);
+  transition: background 0.4s ease;
+}
+
+/* ---- Buttons ---- */
+.btn-primary {
+  background-image: linear-gradient(to right, var(--btn-from), var(--btn-to));
+  color: var(--btn-text);
+}
+.btn-outline {
+  border: 1px solid var(--btn-outline-border);
+  background: var(--btn-outline-bg);
+  color: var(--btn-outline-text);
+  transition:
+    border-color 0.25s ease,
+    background 0.25s ease;
+}
+.btn-outline:hover {
+  border-color: var(--accent);
+  background: color-mix(in oklab, var(--accent) 12%, transparent);
 }
 
 /* ---- Gradient text ---- */
 .text-gradient {
-  background: linear-gradient(120deg, #a7ebf2 0%, #54acbf 55%, #26658c 100%);
+  background: var(--grad-text);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -111,10 +215,10 @@ body {
   transform: none;
 }
 
-/* Grid background */
+/* ---- Grid background ---- */
 .grid-bg {
   background-image:
-    linear-gradient(rgba(84, 172, 191, 0.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(84, 172, 191, 0.06) 1px, transparent 1px);
+    linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
   background-size: 46px 46px;
 }

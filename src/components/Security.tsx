@@ -31,13 +31,13 @@ export default function Security() {
         <div className="glass overflow-hidden rounded-[2.5rem] p-8 sm:p-14">
           <div className="grid gap-12 lg:grid-cols-[1fr_1.2fr] lg:items-center">
             <Reveal>
-              <span className="text-sm font-semibold uppercase tracking-widest text-luna-300">
+              <span className="text-sm font-semibold uppercase tracking-widest text-accent">
                 Sécurité &amp; confidentialité
               </span>
-              <h2 className="mt-3 font-display text-3xl font-semibold text-cloud sm:text-4xl">
+              <h2 className="mt-3 font-display text-3xl font-semibold text-foreground sm:text-4xl">
                 Vos données médicales méritent le meilleur niveau de protection
               </h2>
-              <p className="mt-4 text-cloud/65">
+              <p className="mt-4 text-foreground/65">
                 La confidentialité des données de santé est notre priorité
                 absolue. Ophtech est conçu dès le départ autour de la sécurité
                 et de l&apos;isolation des données.
@@ -49,15 +49,15 @@ export default function Security() {
                 <Reveal
                   key={it.title}
                   delay={i * 90}
-                  className="rounded-2xl border border-luna-300/15 bg-luna-900/40 p-6"
+                  className="panel rounded-2xl p-6"
                 >
-                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-luna-500/20 text-luna-100">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-luna-300/15 text-accent">
                     <it.icon className="h-5 w-5" strokeWidth={2.2} />
                   </div>
-                  <h3 className="mt-4 text-base font-semibold text-cloud">
+                  <h3 className="mt-4 text-base font-semibold text-foreground">
                     {it.title}
                   </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-cloud/60">
+                  <p className="mt-2 text-sm leading-relaxed text-foreground/60">
                     {it.text}
                   </p>
                 </Reveal>

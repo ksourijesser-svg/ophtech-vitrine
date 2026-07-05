@@ -38,10 +38,10 @@ export default function FAQ() {
     <section id="faq" className="relative py-24">
       <div className="mx-auto max-w-3xl px-5 sm:px-8">
         <Reveal className="text-center">
-          <span className="text-sm font-semibold uppercase tracking-widest text-luna-300">
+          <span className="text-sm font-semibold uppercase tracking-widest text-accent">
             FAQ
           </span>
-          <h2 className="mt-3 font-display text-3xl font-semibold text-cloud sm:text-4xl">
+          <h2 className="mt-3 font-display text-3xl font-semibold text-foreground sm:text-4xl">
             Questions fréquentes
           </h2>
         </Reveal>
@@ -52,19 +52,19 @@ export default function FAQ() {
             return (
               <Reveal key={f.q} delay={i * 50}>
                 <div
-                  className={`glass overflow-hidden rounded-2xl transition-colors ${
-                    isOpen ? "border-luna-300/40" : ""
+                  className={`glass overflow-hidden rounded-2xl ${
+                    isOpen ? "border-accent/40" : ""
                   }`}
                 >
                   <button
                     onClick={() => setOpen(isOpen ? null : i)}
                     className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left"
                   >
-                    <span className="text-base font-medium text-cloud">
+                    <span className="text-base font-medium text-foreground">
                       {f.q}
                     </span>
                     <ChevronDown
-                      className={`h-5 w-5 shrink-0 text-luna-100 transition-transform duration-300 ${
+                      className={`h-5 w-5 shrink-0 text-accent transition-transform duration-300 ${
                         isOpen ? "rotate-180" : ""
                       }`}
                     />
@@ -77,7 +77,7 @@ export default function FAQ() {
                     }`}
                   >
                     <div className="overflow-hidden">
-                      <p className="px-6 pb-5 text-sm leading-relaxed text-cloud/65">
+                      <p className="px-6 pb-5 text-sm leading-relaxed text-foreground/65">
                         {f.a}
                       </p>
                     </div>

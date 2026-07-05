@@ -9,16 +9,16 @@ export default function Hero() {
     >
       {/* Background layers */}
       <div className="grid-bg pointer-events-none absolute inset-0 opacity-70" />
-      <div className="pointer-events-none absolute -top-24 -left-24 h-[420px] w-[420px] rounded-full bg-luna-500/30 blur-[120px]" />
-      <div className="pointer-events-none absolute top-10 right-0 h-[380px] w-[380px] rounded-full bg-luna-300/20 blur-[130px]" />
-      <div className="pointer-events-none absolute -bottom-32 left-1/3 h-[360px] w-[360px] rounded-full bg-luna-700/40 blur-[120px]" />
+      <div className="pointer-events-none absolute -top-24 -left-24 h-[420px] w-[420px] rounded-full bg-luna-300/25 blur-[120px]" />
+      <div className="pointer-events-none absolute top-10 right-0 h-[380px] w-[380px] rounded-full bg-luna-100/25 blur-[130px]" />
+      <div className="pointer-events-none absolute -bottom-32 left-1/3 h-[360px] w-[360px] rounded-full bg-luna-500/20 blur-[120px]" />
 
       <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-5 sm:px-8 lg:grid-cols-[1.05fr_1fr] lg:gap-6">
         {/* Portrait — she points toward the headline on the right */}
         <div className="relative order-2 lg:order-1">
           <div className="relative mx-auto max-w-md lg:max-w-none">
             {/* Glow ring behind portrait */}
-            <div className="absolute inset-x-6 bottom-4 top-10 rounded-[2.5rem] bg-gradient-to-tr from-luna-500/40 via-luna-300/20 to-transparent blur-2xl" />
+            <div className="absolute inset-x-6 bottom-4 top-10 rounded-[2.5rem] bg-gradient-to-tr from-luna-300/40 via-luna-100/25 to-transparent blur-2xl" />
             <div className="relative animate-float">
               <Image
                 src="/dc.png"
@@ -26,22 +26,22 @@ export default function Hero() {
                 width={1000}
                 height={640}
                 priority
-                className="relative z-10 h-auto w-full select-none drop-shadow-[0_30px_60px_rgba(1,28,64,0.6)]"
+                className="relative z-10 h-auto w-full select-none drop-shadow-[0_30px_60px_rgba(8,32,51,0.35)]"
               />
             </div>
 
             {/* Floating stat chips */}
             <div className="glass absolute left-0 top-16 z-20 hidden rounded-2xl px-4 py-3 shadow-soft sm:block">
-              <p className="text-2xl font-semibold text-luna-100">+30%</p>
-              <p className="text-xs text-cloud/70">de temps gagné</p>
+              <p className="text-2xl font-semibold text-accent">+30%</p>
+              <p className="text-xs text-foreground/70">de temps gagné</p>
             </div>
             <div className="glass absolute bottom-8 right-0 z-20 hidden rounded-2xl px-4 py-3 shadow-soft sm:block">
               <div className="flex items-center gap-2">
                 <span className="flex h-2.5 w-2.5">
-                  <span className="absolute h-2.5 w-2.5 animate-ping rounded-full bg-luna-100/70" />
-                  <span className="h-2.5 w-2.5 rounded-full bg-luna-100" />
+                  <span className="absolute h-2.5 w-2.5 animate-ping rounded-full bg-luna-300/70" />
+                  <span className="h-2.5 w-2.5 rounded-full bg-luna-300" />
                 </span>
-                <p className="text-sm font-medium text-cloud">
+                <p className="text-sm font-medium text-foreground">
                   Salle d&apos;attente en direct
                 </p>
               </div>
@@ -51,18 +51,18 @@ export default function Hero() {
 
         {/* Copy */}
         <div className="order-1 text-center lg:order-2 lg:text-left">
-          <span className="inline-flex items-center gap-2 rounded-full border border-luna-300/25 bg-luna-500/10 px-4 py-1.5 text-xs font-medium text-luna-100">
+          <span className="inline-flex items-center gap-2 rounded-full border border-border bg-luna-300/10 px-4 py-1.5 text-xs font-medium text-accent">
             <Sparkles className="h-3.5 w-3.5" />
             Conçu exclusivement pour l&apos;ophtalmologie
           </span>
 
-          <h1 className="mt-5 font-display text-4xl font-semibold leading-[1.08] tracking-tight text-cloud sm:text-5xl lg:text-6xl">
+          <h1 className="mt-5 font-display text-4xl font-semibold leading-[1.08] tracking-tight text-foreground sm:text-5xl lg:text-6xl">
             Gérez votre cabinet{" "}
             <span className="text-gradient">d&apos;ophtalmologie</span> en toute
             simplicité
           </h1>
 
-          <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-cloud/70 lg:mx-0 lg:text-lg">
+          <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-foreground/70 lg:mx-0 lg:text-lg">
             Patients, rendez-vous, salle d&apos;attente en temps réel, chirurgies,
             facturation, ordonnances et prise de rendez-vous en ligne — le tout
             réuni dans une plateforme unique, sécurisée et pensée pour vous.
@@ -71,31 +71,31 @@ export default function Hero() {
           <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row lg:justify-start">
             <a
               href="#demo"
-              className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-luna-100 to-luna-300 px-7 py-3.5 text-sm font-semibold text-luna-900 shadow-glow transition-transform hover:scale-[1.03] sm:w-auto"
+              className="btn-primary group inline-flex w-full items-center justify-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold shadow-glow transition-transform hover:scale-[1.03] sm:w-auto"
             >
               Démarrer gratuitement
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </a>
             <a
               href="#workflow"
-              className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-luna-300/30 bg-luna-500/5 px-7 py-3.5 text-sm font-semibold text-cloud transition-colors hover:border-luna-300/60 hover:bg-luna-500/15 sm:w-auto"
+              className="btn-outline inline-flex w-full items-center justify-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold sm:w-auto"
             >
               <PlayCircle className="h-4 w-4" />
               Voir la démo
             </a>
           </div>
 
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-cloud/55 lg:justify-start">
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-foreground/55 lg:justify-start">
             <span className="flex items-center gap-2">
-              <span className="h-1.5 w-1.5 rounded-full bg-luna-100" />
+              <span className="h-1.5 w-1.5 rounded-full bg-accent" />
               Sans engagement
             </span>
             <span className="flex items-center gap-2">
-              <span className="h-1.5 w-1.5 rounded-full bg-luna-100" />
+              <span className="h-1.5 w-1.5 rounded-full bg-accent" />
               Données chiffrées &amp; isolées
             </span>
             <span className="flex items-center gap-2">
-              <span className="h-1.5 w-1.5 rounded-full bg-luna-100" />
+              <span className="h-1.5 w-1.5 rounded-full bg-accent" />
               Support en français
             </span>
           </div>

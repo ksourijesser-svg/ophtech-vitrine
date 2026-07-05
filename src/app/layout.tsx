@@ -42,7 +42,19 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="fr" className={`${outfit.variable} ${fraunces.variable}`}>
+    <html
+      lang="fr"
+      className={`${outfit.variable} ${fraunces.variable}`}
+      suppressHydrationWarning
+    >
+      <head>
+        {/* Applique le thème sauvegardé avant le premier rendu (évite le flash) */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `try{if(localStorage.getItem('theme')==='dark'){document.documentElement.classList.add('dark')}}catch(e){}`,
+          }}
+        />
+      </head>
       <body>{children}</body>
     </html>
   );

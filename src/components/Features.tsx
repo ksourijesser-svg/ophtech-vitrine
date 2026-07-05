@@ -24,13 +24,13 @@ export default function Features() {
     <section id="fonctionnalites" className="relative py-24">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <Reveal className="mx-auto max-w-2xl text-center">
-          <span className="text-sm font-semibold uppercase tracking-widest text-luna-300">
+          <span className="text-sm font-semibold uppercase tracking-widest text-accent">
             Pourquoi Ophtech
           </span>
-          <h2 className="mt-3 font-display text-3xl font-semibold text-cloud sm:text-4xl">
+          <h2 className="mt-3 font-display text-3xl font-semibold text-foreground sm:text-4xl">
             Pensé par et pour les ophtalmologistes
           </h2>
-          <p className="mt-4 text-cloud/65">
+          <p className="mt-4 text-foreground/65">
             Une plateforme moderne qui remplace vos outils éparpillés et vous
             fait gagner un temps précieux, sans compromis sur la sécurité.
           </p>
@@ -47,10 +47,10 @@ export default function Features() {
               <div className="relative flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-luna-100 to-luna-300 text-luna-900 shadow-glow">
                 <f.icon className="h-7 w-7" strokeWidth={2.2} />
               </div>
-              <h3 className="relative mt-6 text-xl font-semibold text-cloud">
+              <h3 className="relative mt-6 text-xl font-semibold text-foreground">
                 {f.title}
               </h3>
-              <p className="relative mt-3 text-sm leading-relaxed text-cloud/65">
+              <p className="relative mt-3 text-sm leading-relaxed text-foreground/65">
                 {f.text}
               </p>
             </Reveal>
