@@ -19,9 +19,9 @@ export default function Hero() {
           <div className="relative mx-auto max-w-md lg:max-w-none">
             {/* Glow ring behind portrait */}
             <div className="absolute inset-x-6 bottom-4 top-10 rounded-[2.5rem] bg-gradient-to-tr from-luna-300/40 via-luna-100/25 to-transparent blur-2xl" />
-            <div className="relative animate-float">
+            <div className="relative">
               <Image
-                src="/dc.png"
+                src="/doc.png"
                 alt="Ophtalmologiste présentant Ophtech"
                 width={1000}
                 height={640}
