@@ -50,7 +50,7 @@ export default function Hero() {
         </div>
 
         {/* Copy */}
-        <div className="order-1 text-center lg:order-2 lg:self-start lg:text-left">
+        <div className="order-1 text-center lg:order-2 lg:-mt-16 lg:self-start lg:text-left">
           <span className="inline-flex items-center gap-2 rounded-full border border-border bg-luna-300/10 px-4 py-1.5 text-xs font-medium text-accent">
             <Sparkles className="h-3.5 w-3.5" />
             Conçu exclusivement pour l&apos;ophtalmologie
